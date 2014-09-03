@@ -4,8 +4,7 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 -}
 
-(..|..) :: Integral a => a -> a -> Bool
-a ..|.. b = a `mod` b == 0
+import Euler ((|:))
 
 f :: Int
-f = sum $ filter (\n -> n ..|.. 3 || n ..|.. 5) [1..999]
+f = sum $ filter (\n -> n |: 3 || n |: 5) [1..999]
